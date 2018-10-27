@@ -1,0 +1,26 @@
+{
+  "name": "perceptron",
+  "version": "1.0.0",
+  "description": "creating perceptron algorythm",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "na"
+  },
+  "keywords": [
+    "Machine",
+    "learning"
+  ],
+  "author": "Aideen Farrell",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.4",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "webpack": "^4.20.2"
+  }
+}

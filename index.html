@@ -1,0 +1,106 @@
+
+<!DOCTYPE HTML>
+
+<html>
+  <head>
+      <title>Regression and Classification Algorythm</title>
+      <meta charset="utf-8" />
+      <link rel="stylesheet" href="style_sheets/main.css" />
+    </head>
+  
+  <body>	
+  
+  <!-- Header -->
+      <header id="header" class="alt">
+      <div class="inner">
+          <h1> Regression and Classification</h1>
+          <p>Programming Exercise 1</p>
+       
+          <p>Due on October 31st</p>
+          <br/>
+      </div>
+      </header>
+
+      <div style= "border: 25px solid grey; padding: 25px; margin: 5px;border-style: solid; border-color: #FFFFFF">
+        Regression Task 
+        <br/>Choose a regression dataset and apply linear regression on a random subset of
+        the training set of increasing size. You should randomly select training sets that
+        include more and more data points:
+        <br/>• Plot the approximation error (square loss) on the training set as a function
+        of the number of samples (i.e. data points in the training set)
+        <br/>• Plot the cpu-time as a function of the number of samples
+        <br/>• Explain the behaviour of both curves.
+        <br/>• Plot the learned weights for two different number of training samples. Can
+        you find an interpretation for the learned weights?      <br/>
+      
+    </div>
+  <br/>
+  
+  
+<!-- P5. https://cdnjs.com/libraries/p5.js-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js"></script>
+<!-- use ajax/jquery for spotify API -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<!-- Plotly.js -->
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<!-- https://js.tensorflow.org/-->
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.13.0"> </script>
+
+
+
+<div style= "border: 25px solid grey;padding: 25px;margin: 5px;border-style: solid; border-color: #FFFFFF">
+<!--input to justDoIt is () -->
+<button onclick="javascript:justDoIt();">Run</button>
+<br/>
+Apply linear regression on a random subset of the training set of increasing size. You should randomly select training sets that include more and more data points:
+<br/>
+
+<div id='container' align = "center"></div>
+  <script>
+  var sketch = function(p) {
+    p.setup = function(){
+      p.createCanvas(600, 400);
+      p.background("grey");
+    }
+  };
+  new p5(sketch, window.document.getElementById('container'));
+  </script>
+
+
+<b>RESULT:</b>
+<div id="resultDiv"></div>
+ 
+</Div>
+
+<div style= "border: 25px solid grey; padding: 25px; margin: 5px;border-style: solid; border-color: #FFFFFF">
+
+<h3>Conclusions</h3>
+<b>
+Regarding the accuracy and running time of the algorithm as a function of N (the number of data points) and d (the number of dimensions). </b>
+
+<br/><u>Observations: </u>
+<br/><b>1. </b> Comparing two examples with equal dimensions:
+  <li> Convergence generally occurs within fewer epochs when less data points are used.</li>
+  <li>Generally speaking the more data points that are used the more accurate the final hypothesis is in comparison to the target function.</li>
+
+    
+<b>2. </b> Comparing the 2-Dimension examples with the 10-Dimension example, the higher dimension generally requires a greater number of epochs for convergence.
+
+<br/><b>3. </b> I have also noted that convergence seems slower when the plane size is is increased, however I am not sure if this has been a coincidence.
+
+<br/><b>4. </b> Another observation is that when the datasets are linearly separable converge does eventually occur regardless of the dimensions or the data size.  The resulting final hypothesis provides correct classification although there is no guarantees about how long it will take regardless of the dataset size or the dimensions. 
+
+</b>
+</Div>
+
+<script src="scripts/create_dataset.js"></script>
+<script src="scripts/main.js"></script>
+
+<script>
+
+
+window.onload = pageLoad;</script>
+</body>
+</html>
