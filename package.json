@@ -7,10 +7,7 @@
     "start": "http-server",
     "test": "test"
   },
-  "repository": {
-    "type": "git",
-    "url": "na"
-  },
+  "repository": "github:aideenf/linearRegression",
   "keywords": [
     "machine",
     "learning"
