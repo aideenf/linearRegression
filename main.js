@@ -51,7 +51,7 @@ function loss(_predictedTensor, _labels) {
 }
 
 
-async function train(xsTensor, ysTensor, numIterations) {
+function train(xsTensor, ysTensor, numIterations) {
 
 	/*//////OPTIMISER.MINIMISE/////////////
 	Minimize takes a function that does two things:
@@ -64,13 +64,8 @@ async function train(xsTensor, ysTensor, numIterations) {
     */
 
 	for (let iter = 0; iter < numIterations; iter++) {
-		optimiser.minimize(function () {
-			return loss(predict(xsTensor), ysTensor);
-		}, globalWeightsTensorArr);
+		optimiser.minimize(() => loss(predict(xsTensor), ysTensor))
 	}
-
-	// Use tf.nextFrame to not block the browser.
-	await tf.nextFrame();
 }
 
 function justDoIt() {
