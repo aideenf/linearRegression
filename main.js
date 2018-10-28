@@ -81,10 +81,10 @@ function justDoIt() {
 	// Train
 
 	console.log("MAIN  - globalArrayXs: " + globaArrayXs);
-	console.log("MAIN  - globalArrayLabels: " + globaArrayYs);
+	console.log("MAIN  - globalArrayLabels: " + globalArrayYs);
 
 	globalTensorXs = tf.tensor2d(globaArrayXs);
-	globalTensorYs = tf.tensor1d(globaArrayYs);
+	globalTensorYs = tf.tensor1d(globalArrayYs);
 
 	console.log("MAIN  - globalTensorXs: " + globalTensorXs);
 	console.log("MAIN  - globalTensorLabels:: " + globalTensorYs);
