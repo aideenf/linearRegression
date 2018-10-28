@@ -3,8 +3,7 @@ let globalArrayYs; //labels
 let globalTensorXs;
 let globalTensorYs;
 
-const globalWeightsTensorArr = []; //the weights(coefficients) as array of tensors
-const globalWeightsArr = []; //the weights(coefficients) as normal array
+let globalWeightsTensorVar;
 
 //Create an optimizer, we will use this later. You can play
 // with some of these values to see how the model performs.
@@ -26,14 +25,7 @@ function pageLoad() {
 //The following code constructs a predict function that takes inputs(X's) and returns prediction Y:
 // it represents our 'model'. Given an input 'xs' it will try and * predict the appropriate output 'y'.
 function predict(_Xs) {
-  return tf.tidy(() => {
-    for (var x = 0; x < 8; x++) {
-      globalWeightsArr[x] = globalWeightsTensorArr[x].dataSync();
-    }
-    const weightTensor = tf.tensor1d(globalWeightsArr);
-    const prediction = tf.dot(_Xs, weightTensor);
-    return prediction;
-  });
+  return tf.dot(_Xs, globalWeightsTensorVar);
 }
 
 //The loss function takes the predictions from the predict function
@@ -69,11 +61,7 @@ function train(xsTensor, ysTensor, numIterations) {
     */
 
   for (let iter = 0; iter < numIterations; iter++) {
-    optimiser.minimize(
-      () => loss(predict(xsTensor), ysTensor),
-      true,
-      globalWeightsTensorArr,
-    );
+    optimiser.minimize(() => loss(predict(xsTensor), ysTensor));
   }
 }
 

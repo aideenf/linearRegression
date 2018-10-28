@@ -1,10 +1,7 @@
 //Creates an array of tensor variables, a weight for each input(X's)
 function createWeights(_numWeights) {
-  for (var x = 0; x < _numWeights; x++) {
-    globalWeightsTensorArr.push(tf.variable(tf.scalar(Math.random())));
-    globalWeightsArr[x] = globalWeightsTensorArr[x].dataSync();
-  }
-  //const a = tf.tensor1d(globalWeights);
+  const randomTensor = tf.randomUniform([8, 1]);
+  globalWeightsTensorVar = tf.variable(randomTensor);
 }
 
 //Creates a daa set of  _size elements, where each element has _dimension dimensions
