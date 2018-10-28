@@ -4,8 +4,7 @@
   "description": "creating perceptron algorithm",
   "main": "index.js",
   "scripts": {
-    "start": "http-server",
-    "test": "test"
+    "start": "http-server"
   },
   "repository": "github:aideenf/linearRegression",
   "keywords": [
