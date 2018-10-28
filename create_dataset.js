@@ -37,8 +37,8 @@ function createArrayFromFile(_jsonObj) {
 
 	createWeights(cols.length);
 
-	globaArrayXs = xs;
-	globaArrayYs = labels;
+	globalArrayXs = xs;
+	globalArrayYs = labels;
 }
 
 function getData(_file, callback) {       //this will read file and send information to other function
