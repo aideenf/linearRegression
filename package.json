@@ -1,26 +1,18 @@
 {
   "name": "perceptron",
   "version": "1.0.0",
-  "description": "creating perceptron algorythm",
-  "main": "index.js",
+  "description": "creating perceptron algorithm",
   "scripts": {
-    "test": "test"
+    "start": "http-server"
   },
-  "repository": {
-    "type": "git",
-    "url": "na"
-  },
+  "repository": "github:aideenf/linearRegression",
   "keywords": [
-    "Machine",
+    "machine",
     "learning"
   ],
   "author": "Aideen Farrell",
   "license": "UNLICENSED",
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-loader": "^8.0.4",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "webpack": "^4.20.2"
+    "http-server": "^0.11.1"
   }
 }
