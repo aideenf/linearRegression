@@ -1,4 +1,4 @@
-let globaArrayXs = 0;  //inputs
+let globalArrayXs = 0;  //inputs
 let globalArrayYs = 0;  //labels
 let globalTensorXs = 0;
 let globalTensorYs = 0;
@@ -80,10 +80,10 @@ function justDoIt() {
 	//
 	// Train
 
-	console.log("MAIN  - globalArrayXs: " + globaArrayXs);
+	console.log("MAIN  - globalArrayXs: " + globalArrayXs);
 	console.log("MAIN  - globalArrayLabels: " + globalArrayYs);
 
-	globalTensorXs = tf.tensor2d(globaArrayXs);
+	globalTensorXs = tf.tensor2d(globalArrayXs);
 	globalTensorYs = tf.tensor1d(globalArrayYs);
 
 	console.log("MAIN  - globalTensorXs: " + globalTensorXs);
